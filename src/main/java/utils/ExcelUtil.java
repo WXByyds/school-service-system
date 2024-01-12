@@ -13,11 +13,23 @@ import java.util.List;
  * Excel文件导出工具类
  */
 public class ExcelUtil {
+    private static ExcelUtil instance = null;
+
+    private ExcelUtil() {
+    }
+
+    public static ExcelUtil getInstance() {
+        if (instance == null) {
+            instance = new ExcelUtil();
+        }
+        return instance;
+    }
+
     /**
      * @param courses 要导出的List集合数据
      * @param file 要导出到哪个文件
      */
-    public static void ExportCourse(List<Course> courses, File file) {
+    public void ExportCourse(List<Course> courses, File file) {
         EasyExcel.write(file, Course.class).sheet("sheet1").doWrite(courses);
     }
 
@@ -25,7 +37,7 @@ public class ExcelUtil {
      * @param teachers 要导出的List集合数据
      * @param file 要导出到哪个文件
      */
-    public static void ExportTeacher(List<Teacher> teachers, File file) {
+    public void ExportTeacher(List<Teacher> teachers, File file) {
         EasyExcel.write(file, Teacher.class).sheet("sheet1").doWrite(teachers);
     }
 
@@ -33,7 +45,7 @@ public class ExcelUtil {
      * @param students 要导出的List集合数据
      * @param file 要导出到哪个文件
      */
-    public static void ExportStudent(List<Student> students, File file) {
+    public void ExportStudent(List<Student> students, File file) {
         EasyExcel.write(file, Student.class).sheet("sheet1").doWrite(students);
     }
 
@@ -41,7 +53,7 @@ public class ExcelUtil {
      * @param scores 要导出的List集合数据
      * @param file 要导出到哪个文件
      */
-    public static void ExportScore(List<Score> scores, File file) {
+    public void ExportScore(List<Score> scores, File file) {
         EasyExcel.write(file, Score.class).sheet("sheet1").doWrite(scores);
     }
 }

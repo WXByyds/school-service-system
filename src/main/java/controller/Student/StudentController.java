@@ -33,6 +33,8 @@ public class StudentController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    RefreshUtil refreshUtil = RefreshUtil.getInstance();
+
     /**
      * @param f 父窗口
      * @param axis 布局方式，1代表垂直布局
@@ -101,7 +103,7 @@ public class StudentController extends Box {
         };
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        RefreshUtil.refreshStudent(data,students,tableModel);
+        refreshUtil.refreshStudent(data,students,tableModel);
 
         insertStudent.addActionListener(new ActionListener() {
             @Override
@@ -117,7 +119,7 @@ public class StudentController extends Box {
                             exception.printStackTrace();
                         }
 
-                        RefreshUtil.refreshStudent(data,students,tableModel);
+                        refreshUtil.refreshStudent(data,students,tableModel);
                     }
                 });
             }
@@ -172,7 +174,7 @@ public class StudentController extends Box {
                                 exception.printStackTrace();
                             }
 
-                            RefreshUtil.refreshStudent(data,students,tableModel);
+                            refreshUtil.refreshStudent(data,students,tableModel);
                         }
                     });
                 } else {
@@ -218,7 +220,7 @@ public class StudentController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshStudent(data,students,tableModel);
+                refreshUtil.refreshStudent(data,students,tableModel);
             }
         });
 
@@ -239,7 +241,7 @@ public class StudentController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshStudent(data,students,tableModel);
+                refreshUtil.refreshStudent(data,students,tableModel);
             }
         });
 
@@ -278,7 +280,8 @@ public class StudentController extends Box {
                         Student student = new Student(s1,s2,s3,s4,s5,s6);
                         students.add(student);
                     }
-                    ExcelUtil.ExportStudent(students, selectedFile);
+                    ExcelUtil excelUtil = ExcelUtil.getInstance();
+                    excelUtil.ExportStudent(students, selectedFile);
                 }
             }
         });
@@ -294,7 +297,7 @@ public class StudentController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshStudent(data,students,tableModel);
+                refreshUtil.refreshStudent(data,students,tableModel);
             }
         });
 

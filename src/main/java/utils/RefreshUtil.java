@@ -11,6 +11,18 @@ import java.util.Vector;
  * 刷新数据工具类
  */
 public class RefreshUtil {
+    private static RefreshUtil instance = null;
+
+    private RefreshUtil() {
+    }
+
+    public static RefreshUtil getInstance() {
+        if (instance == null) {
+            instance = new RefreshUtil();
+        }
+        return instance;
+    }
+
     /**
      * 课程数据刷新
      * 清空data数据，重新加载
@@ -18,7 +30,7 @@ public class RefreshUtil {
      * @param courses 重新加载的数据
      * @param tableModel 刷新数据
      */
-    public static void refreshCourse(Vector<Vector> data, List<Course> courses, DefaultTableModel tableModel) {
+    public void refreshCourse(Vector<Vector> data, List<Course> courses, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Course> iterator = courses.iterator();
         while (iterator.hasNext()) {
@@ -41,7 +53,7 @@ public class RefreshUtil {
      * @param teachers 重新加载的数据
      * @param tableModel 刷新数据
      */
-    public static void refreshTeacher(Vector<Vector> data, List<Teacher> teachers, DefaultTableModel tableModel) {
+    public void refreshTeacher(Vector<Vector> data, List<Teacher> teachers, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Teacher> iterator = teachers.iterator();
         while (iterator.hasNext()) {
@@ -66,7 +78,7 @@ public class RefreshUtil {
      * @param students 重新加载的数据
      * @param tableModel 刷新数据
      */
-    public static void refreshStudent(Vector<Vector> data, List<Student> students, DefaultTableModel tableModel) {
+    public void refreshStudent(Vector<Vector> data, List<Student> students, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Student> iterator = students.iterator();
         while (iterator.hasNext()) {
@@ -90,7 +102,7 @@ public class RefreshUtil {
      * @param scores 重新加载的数据
      * @param tableModel 刷新数据
      */
-    public static void refreshScore(Vector<Vector> data, List<Score> scores, DefaultTableModel tableModel) {
+    public void refreshScore(Vector<Vector> data, List<Score> scores, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Score> iterator = scores.iterator();
         while (iterator.hasNext()) {
@@ -113,7 +125,7 @@ public class RefreshUtil {
      * @param averages 重新加载的数据
      * @param tableModel 刷新数据
      */
-    public static void refreshAverage(Vector<Vector> data, List<Average> averages, DefaultTableModel tableModel) {
+    public void refreshAverage(Vector<Vector> data, List<Average> averages, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Average> iterator = averages.iterator();
         while (iterator.hasNext()) {

@@ -35,6 +35,8 @@ public class ScoreController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    RefreshUtil refreshUtil = RefreshUtil.getInstance();
+
     /**
      * @param f 父窗口
      * @param axis 布局方式，1代表垂直布局
@@ -106,7 +108,7 @@ public class ScoreController extends Box {
         };
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        RefreshUtil.refreshScore(data,scores,tableModel);
+        refreshUtil.refreshScore(data,scores,tableModel);
 
         insertScore.addActionListener(new ActionListener() {
             @Override
@@ -122,7 +124,7 @@ public class ScoreController extends Box {
                             exception.printStackTrace();
                         }
 
-                        RefreshUtil.refreshScore(data,scores,tableModel);
+                        refreshUtil.refreshScore(data,scores,tableModel);
                     }
                 });
             }
@@ -169,9 +171,7 @@ public class ScoreController extends Box {
                                 exception.printStackTrace();
                             }
 
-                            RefreshUtil.refreshScore(data,scores,tableModel);
-
-                            tableModel.fireTableDataChanged();
+                            refreshUtil.refreshScore(data,scores,tableModel);
                         }
                     });
                 } else {
@@ -219,7 +219,7 @@ public class ScoreController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshScore(data,scores,tableModel);
+                refreshUtil.refreshScore(data,scores,tableModel);
             }
         });
 
@@ -240,7 +240,7 @@ public class ScoreController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshScore(data,scores,tableModel);
+                refreshUtil.refreshScore(data,scores,tableModel);
             }
         });
 
@@ -278,7 +278,8 @@ public class ScoreController extends Box {
                         Score score = new Score(s1,s2,s3,s4,s5);
                         scores.add(score);
                     }
-                    ExcelUtil.ExportScore(scores, selectedFile);
+                    ExcelUtil excelUtil = ExcelUtil.getInstance();
+                    excelUtil.ExportScore(scores, selectedFile);
                 }
             }
         });
@@ -294,7 +295,7 @@ public class ScoreController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshScore(data,scores,tableModel);
+                refreshUtil.refreshScore(data,scores,tableModel);
             }
         });
 

@@ -37,6 +37,8 @@ public class TeacherController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    RefreshUtil refreshUtil = RefreshUtil.getInstance();
+
     /**
      * @param f 父窗口
      * @param axis 布局方式，1代表垂直布局
@@ -106,7 +108,7 @@ public class TeacherController extends Box {
         };
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        RefreshUtil.refreshTeacher(data,teachers,tableModel);
+        refreshUtil.refreshTeacher(data,teachers,tableModel);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
@@ -124,7 +126,7 @@ public class TeacherController extends Box {
                             exception.printStackTrace();
                         }
 
-                        RefreshUtil.refreshTeacher(data,teachers,tableModel);
+                        refreshUtil.refreshTeacher(data,teachers,tableModel);
                     }
                 });
             }
@@ -182,7 +184,7 @@ public class TeacherController extends Box {
                                 exception.printStackTrace();
                             }
 
-                            RefreshUtil.refreshTeacher(data,teachers,tableModel);
+                            refreshUtil.refreshTeacher(data,teachers,tableModel);
                         }
                     });
                 } else {
@@ -227,7 +229,7 @@ public class TeacherController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshTeacher(data,teachers,tableModel);
+                refreshUtil.refreshTeacher(data,teachers,tableModel);
             }
         });
 
@@ -248,7 +250,7 @@ public class TeacherController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshTeacher(data,teachers,tableModel);
+                refreshUtil.refreshTeacher(data,teachers,tableModel);
             }
         });
 
@@ -288,7 +290,8 @@ public class TeacherController extends Box {
                         Teacher teacher = new Teacher(t1,t2,t3,t4,t5,t6,t7);
                         teachers.add(teacher);
                     }
-                    ExcelUtil.ExportTeacher(teachers, selectedFile);
+                    ExcelUtil excelUtil = ExcelUtil.getInstance();
+                    excelUtil.ExportTeacher(teachers, selectedFile);
                 }
             }
         });
@@ -304,7 +307,7 @@ public class TeacherController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshTeacher(data,teachers,tableModel);
+                refreshUtil.refreshTeacher(data,teachers,tableModel);
             }
         });
 

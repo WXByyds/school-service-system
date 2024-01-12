@@ -35,6 +35,8 @@ public class CourseController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    RefreshUtil refreshUtil = RefreshUtil.getInstance();
+
     /**
      * @param f 父窗口
      * @param axis 布局方式，1代表垂直布局
@@ -103,7 +105,7 @@ public class CourseController extends Box {
         jTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 
-        RefreshUtil.refreshCourse(data,courses,tableModel);
+        refreshUtil.refreshCourse(data,courses,tableModel);
 
         insertCourse.addActionListener(new ActionListener() {
             @Override
@@ -119,7 +121,7 @@ public class CourseController extends Box {
                             exception.printStackTrace();
                         }
 
-                        RefreshUtil.refreshCourse(data,courses,tableModel);
+                        refreshUtil.refreshCourse(data,courses,tableModel);
                     }
                 });
             }
@@ -170,7 +172,7 @@ public class CourseController extends Box {
                                 exception.printStackTrace();
                             }
 
-                            RefreshUtil.refreshCourse(data,courses,tableModel);
+                            refreshUtil.refreshCourse(data,courses,tableModel);
                         }
                     });
                 } else {
@@ -215,7 +217,7 @@ public class CourseController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshCourse(data,courses,tableModel);
+                refreshUtil.refreshCourse(data,courses,tableModel);
             }
         });
 
@@ -236,7 +238,7 @@ public class CourseController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshCourse(data,courses,tableModel);
+                refreshUtil.refreshCourse(data,courses,tableModel);
             }
         });
 
@@ -274,7 +276,8 @@ public class CourseController extends Box {
                         Course course = new Course(c1,c2,c3,c4,c5);
                         courses.add(course);
                     }
-                    ExcelUtil.ExportCourse(courses, selectedFile);
+                    ExcelUtil excelUtil = ExcelUtil.getInstance();
+                    excelUtil.ExportCourse(courses, selectedFile);
                 }
             }
         });
@@ -290,7 +293,7 @@ public class CourseController extends Box {
                     exception.printStackTrace();
                 }
 
-                RefreshUtil.refreshCourse(data,courses,tableModel);
+                refreshUtil.refreshCourse(data,courses,tableModel);
             }
         });
 

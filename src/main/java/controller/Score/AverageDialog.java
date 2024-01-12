@@ -31,6 +31,7 @@ public class AverageDialog extends JDialog {
         dataTitle.add("课程号");
         dataTitle.add("课程平均分");
 
+        RefreshUtil refreshUtil = RefreshUtil.getInstance();
         List<Average> averages = scoreService.selectAverageAll();
         DefaultTableModel tableModel = new DefaultTableModel(data, dataTitle);
         JTable jTable = new JTable(tableModel) {
@@ -40,7 +41,7 @@ public class AverageDialog extends JDialog {
             }
         };
 
-        RefreshUtil.refreshAverage(data, averages,tableModel);
+        refreshUtil.refreshAverage(data, averages,tableModel);
 
         JScrollPane bottomPane = new JScrollPane(jTable);
         bottomPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
