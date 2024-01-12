@@ -5,7 +5,17 @@ import java.io.FileWriter;
 import java.util.Properties;
 import java.util.Set;
 
+/**
+ * 管理员登录工具类
+ */
 public class LoginUtil {
+    /**
+     * 将用户名和密码写入管理员信息配置文件
+     * @param userName 用户名
+     * @param password 用户密码
+     * @return 注册是否成功
+     * @throws Exception
+     */
     public static boolean register(String userName, String password) throws Exception {
         Properties properties = new Properties();
         properties.setProperty(userName, password);
@@ -16,6 +26,13 @@ public class LoginUtil {
         return true;
     }
 
+    /**
+     * 读取管理员信息的配置文件，检查是否存在该管理员信息
+     * @param userName 用户名
+     * @param password 密码
+     * @return 登录是否成功
+     * @throws Exception
+     */
     public static boolean login(String userName, String password) throws Exception {
         Properties properties = new Properties();
         boolean flag = false;

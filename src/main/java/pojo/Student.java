@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 学生信息实体类
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

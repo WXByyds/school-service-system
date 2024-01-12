@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+/**
+ * 课程信息实体类
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

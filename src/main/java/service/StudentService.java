@@ -5,6 +5,9 @@ import pojo.Student;
 
 import java.util.List;
 
+/**
+ * 学生信息业务接口类
+ */
 public interface StudentService {
     List<Student> selectStudent() throws Exception;
 

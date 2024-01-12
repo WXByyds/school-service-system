@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * 教师信息实体类
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

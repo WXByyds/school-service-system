@@ -4,6 +4,9 @@ import pojo.Course;
 
 import java.util.List;
 
+/**
+ * 课程信息业务接口类
+ */
 public interface CourseService {
     List<Course> selectCourse() throws Exception;
 

@@ -5,6 +5,9 @@ import pojo.Student;
 
 import java.util.List;
 
+/**
+ * 学生信息数据库接口类
+ */
 public interface StudentMapper {
     List<Student> selectStudent() throws Exception;
 

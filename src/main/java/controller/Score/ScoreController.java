@@ -21,6 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * 学生成绩管理主界面，是一个Box组件
+ */
 public class ScoreController extends Box {
     ScoreService scoreService = new ScoreServiceImpl();
 
@@ -32,6 +35,10 @@ public class ScoreController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    /**
+     * @param f 父窗口
+     * @param axis 布局方式，1代表垂直布局
+     */
     public ScoreController(JFrame f,int axis) throws Exception {
         super(axis);
 

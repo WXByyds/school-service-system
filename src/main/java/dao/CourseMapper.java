@@ -4,6 +4,9 @@ import pojo.Course;
 
 import java.util.List;
 
+/**
+ * 课程信息数据库接口类
+ */
 public interface CourseMapper {
     List<Course> selectCourse() throws Exception;
 

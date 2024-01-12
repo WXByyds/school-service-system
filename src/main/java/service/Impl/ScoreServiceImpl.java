@@ -9,6 +9,9 @@ import service.ScoreService;
 
 import java.util.List;
 
+/**
+ * 成绩信息业务实现类
+ */
 public class ScoreServiceImpl implements ScoreService {
     ScoreMapper scoreMapper = new ScoreMapperImpl();
 

@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 学生修改对话框
+ */
 public class UpdateDialog extends JDialog {
     StudentService studentService = new StudentServiceImpl();
 
@@ -35,6 +38,18 @@ public class UpdateDialog extends JDialog {
     Box allBox = Box.createVerticalBox();
     Box finalBox = Box.createHorizontalBox();
 
+    /**
+     * 生成一个学生修改对话框
+     * @param f 父窗口
+     * @param title 标题
+     * @param studentNos 学号
+     * @param studentNames 学生姓名
+     * @param studentSexs 学生性别
+     * @param studentAges 学生年龄
+     * @param studentClasss 学生班级
+     * @param studentParentPhones 家长电话
+     * @param listener 数据刷新的监听
+     */
     public UpdateDialog(JFrame f, String title, String studentNos, String studentNames, String studentSexs, Integer studentAges, String studentClasss, String studentParentPhones, ActionDoneListener listener) {
         super(f, title);
 

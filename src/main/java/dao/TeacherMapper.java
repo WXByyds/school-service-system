@@ -5,6 +5,9 @@ import pojo.Teacher;
 
 import java.util.List;
 
+/**
+ * 教师信息数据库接口类
+ */
 public interface TeacherMapper {
     List<Teacher> selectTeacher() throws Exception;
 

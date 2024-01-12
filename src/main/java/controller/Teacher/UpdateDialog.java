@@ -11,6 +11,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+/**
+ * 教师修改对话框
+ */
 public class UpdateDialog extends JDialog {
     TeacherService teacherService = new TeacherServiceImpl();
 
@@ -40,6 +43,20 @@ public class UpdateDialog extends JDialog {
     Box allBox = Box.createVerticalBox();
     Box finalBox = Box.createHorizontalBox();
 
+    /**
+     * 生成教师修改对话框
+     * @param f 父窗口
+     * @param title 标题
+     * @param teacherNos 教师号
+     * @param teacherNames 教师姓名
+     * @param tSexs 教师性别
+     * @param tAges 教师年龄
+     * @param tClasss 授课班级
+     * @param tSalarys 教师薪资
+     * @param entryDate 入职时间
+     * @param dateTimeFormatter 日期格式
+     * @param listener 数据刷新的监听
+     */
     public UpdateDialog(JFrame f, String title, String teacherNos, String teacherNames, String tSexs, Integer tAges, String tClasss, Integer tSalarys, LocalDate entryDate, DateTimeFormatter dateTimeFormatter, ActionDoneListener listener) {
         super(f, title);
 

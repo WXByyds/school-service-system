@@ -16,6 +16,10 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.io.File;
 
+/**
+ * 系统主界面，可根据需要选择要处理的模块
+ * 模块分为：课程管理、教师管理、学生管理、学生成绩管理
+ */
 public class MainController {
     JFrame f = new JFrame("中小学家校服务系统");
     final int WIDTH = 800;
@@ -23,6 +27,9 @@ public class MainController {
 
     JSplitPane jsp = new JSplitPane();
 
+    /**
+     * 初始化界面
+     */
     void init() throws Exception {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("系统管理");
         DefaultMutableTreeNode courseManage = new DefaultMutableTreeNode("课程管理");

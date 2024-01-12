@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 课程平均分实体类
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

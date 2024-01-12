@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 成绩修改对话框
+ */
 public class UpdateDialog extends JDialog {
     ScoreService scoreService = new ScoreServiceImpl();
 
@@ -29,6 +32,16 @@ public class UpdateDialog extends JDialog {
     Box allBox = Box.createVerticalBox();
     Box finalBox = Box.createHorizontalBox();
 
+    /**
+     * 生成一个成绩修改对话框
+     * @param f 父窗口
+     * @param title 标题
+     * @param studentNos 学号
+     * @param courseNos 课程号
+     * @param classNos 班级号
+     * @param courseScores 课程成绩
+     * @param listener 数据刷新的监听
+     */
     public UpdateDialog(JFrame f, String title, String studentNos, String courseNos, String classNos, Double courseScores, ActionDoneListener listener) {
         super(f, title);
 

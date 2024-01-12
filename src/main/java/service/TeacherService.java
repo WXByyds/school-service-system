@@ -6,6 +6,9 @@ import pojo.Teacher;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * 教师信息业务接口类
+ */
 public interface TeacherService {
     List<Teacher> selectTeacher() throws Exception;
 

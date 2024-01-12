@@ -7,6 +7,9 @@ import service.StudentService;
 
 import java.util.List;
 
+/**
+ * 学生信息业务实现类
+ */
 public class StudentServiceImpl implements StudentService {
     StudentMapper studentMapper = new StudentMapperImpl();
 

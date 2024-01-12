@@ -22,6 +22,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * 教师管理主界面，是一个Box组件
+ */
 public class TeacherController extends Box {
     TeacherService teacherService = new TeacherServiceImpl();
 
@@ -34,6 +37,10 @@ public class TeacherController extends Box {
     Vector<String> title = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    /**
+     * @param f 父窗口
+     * @param axis 布局方式，1代表垂直布局
+     */
     public TeacherController(JFrame f, int axis) throws Exception {
         super(axis);
 

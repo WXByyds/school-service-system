@@ -14,6 +14,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 教师信息数据库实现类
+ */
 public class TeacherMapperImpl implements TeacherMapper {
     @Override
     public List<Teacher> selectTeacher() throws Exception {

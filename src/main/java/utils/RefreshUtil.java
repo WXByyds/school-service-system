@@ -7,7 +7,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * 刷新数据工具类
+ */
 public class RefreshUtil {
+    /**
+     * 课程数据刷新
+     * 清空data数据，重新加载
+     * @param data 将数据添加进来
+     * @param courses 重新加载的数据
+     * @param tableModel 刷新数据
+     */
     public static void refreshCourse(Vector<Vector> data, List<Course> courses, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Course> iterator = courses.iterator();
@@ -24,6 +34,13 @@ public class RefreshUtil {
         tableModel.fireTableDataChanged();
     }
 
+    /**
+     * 教师数据刷新
+     * 清空data数据，重新加载
+     * @param data 将数据添加进来
+     * @param teachers 重新加载的数据
+     * @param tableModel 刷新数据
+     */
     public static void refreshTeacher(Vector<Vector> data, List<Teacher> teachers, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Teacher> iterator = teachers.iterator();
@@ -42,6 +59,13 @@ public class RefreshUtil {
         tableModel.fireTableDataChanged();
     }
 
+    /**
+     * 学生数据刷新
+     * 清空data数据，重新加载
+     * @param data 将数据添加进来
+     * @param students 重新加载的数据
+     * @param tableModel 刷新数据
+     */
     public static void refreshStudent(Vector<Vector> data, List<Student> students, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Student> iterator = students.iterator();
@@ -59,6 +83,13 @@ public class RefreshUtil {
         tableModel.fireTableDataChanged();
     }
 
+    /**
+     * 成绩数据刷新
+     * 清空data数据，重新加载
+     * @param data 将数据添加进来
+     * @param scores 重新加载的数据
+     * @param tableModel 刷新数据
+     */
     public static void refreshScore(Vector<Vector> data, List<Score> scores, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Score> iterator = scores.iterator();
@@ -75,6 +106,13 @@ public class RefreshUtil {
         tableModel.fireTableDataChanged();
     }
 
+    /**
+     * 课程平均分数据刷新
+     * 清空data数据，重新加载
+     * @param data 将数据添加进来
+     * @param averages 重新加载的数据
+     * @param tableModel 刷新数据
+     */
     public static void refreshAverage(Vector<Vector> data, List<Average> averages, DefaultTableModel tableModel) {
         data.clear();
         Iterator<Average> iterator = averages.iterator();

@@ -7,6 +7,9 @@ import pojo.Student;
 
 import java.util.List;
 
+/**
+ * 成绩信息数据库接口类
+ */
 public interface ScoreMapper {
     List<Score> selectScore() throws Exception;
 

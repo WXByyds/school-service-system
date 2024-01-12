@@ -3,6 +3,7 @@ import dao.ScoreMapper;
 import dao.impl.CourseMapperImpl;
 import dao.impl.ScoreMapperImpl;
 import org.junit.Test;
+import pojo.Course;
 import service.CourseService;
 import service.Impl.CourseServiceImpl;
 import service.Impl.ScoreServiceImpl;
@@ -46,7 +47,7 @@ public class test {
             Set<String> keys = properties.stringPropertyNames();
             for (String key : keys) {
                 String value = properties.getProperty(key);
-                if(key.equals("zhangsan") && value.equals("123")) {
+                if(key.equals("wangwu") && value.equals("123")) {
                     flag = true;
                 }
             }
@@ -125,5 +126,13 @@ public class test {
 
             }
         }
+    }
+
+    @Test
+    public void testSelectCourse() throws Exception {
+        DruidUtil.init();
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courses =  courseService.selectCourse();
+        System.out.println(courses.size());
     }
 }

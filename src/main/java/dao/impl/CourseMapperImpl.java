@@ -10,6 +10,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 课程信息数据库实现类
+ */
 public class CourseMapperImpl implements CourseMapper {
     @Override
     public List<Course> selectCourse() throws Exception {

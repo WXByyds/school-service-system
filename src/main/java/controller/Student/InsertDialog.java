@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 学生添加对话框
+ */
 public class InsertDialog extends JDialog{
     StudentService studentService = new StudentServiceImpl();
 
@@ -36,6 +39,12 @@ public class InsertDialog extends JDialog{
     Box allBox = Box.createVerticalBox();
     Box finalBox = Box.createHorizontalBox();
 
+    /**
+     * 生成一个学生添加对话框
+     * @param f 父窗口
+     * @param title 标题
+     * @param listener 数据刷新的监听
+     */
     public InsertDialog(JFrame f, String title, ActionDoneListener listener) {
         super(f, title);
 

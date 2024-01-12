@@ -6,6 +6,9 @@ import pojo.Score;
 
 import java.util.List;
 
+/**
+ * 成绩信息业务接口类
+ */
 public interface ScoreService {
     List<Score> selectScore() throws Exception;
 

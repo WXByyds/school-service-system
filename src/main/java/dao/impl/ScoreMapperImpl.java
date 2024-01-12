@@ -14,6 +14,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 成绩信息数据库实现类
+ */
 public class ScoreMapperImpl implements ScoreMapper {
     @Override
     public List<Score> selectScore() throws Exception {

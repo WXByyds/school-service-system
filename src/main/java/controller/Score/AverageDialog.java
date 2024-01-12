@@ -10,12 +10,20 @@ import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import java.util.Vector;
 
+/**
+ * 课程平均分对话框
+ */
 public class AverageDialog extends JDialog {
     ScoreService scoreService = new ScoreServiceImpl();
 
     Vector<String> dataTitle = new Vector<>();
     Vector<Vector> data = new Vector<>();
 
+    /**
+     * 生成课程平均分对话框
+     * @param f 父窗口
+     * @param title 标题
+     */
     public AverageDialog(JFrame f, String title) throws Exception {
         super(f,title);
 

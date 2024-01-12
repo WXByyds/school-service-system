@@ -9,6 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
+/**
+ * 登录界面
+ * 输入信息，选择登录或注册
+ * 将会调用登录检测的方法，查看配置文件中是否有该用户的信息
+ * 登录成功即可进入系统
+ */
 public class LoginController {
     JFrame f = new JFrame("登录");
     final int WIDTH = 500;
@@ -17,6 +23,9 @@ public class LoginController {
     BackGroundPanel bgPanel;
     Box input = Box.createVerticalBox();
 
+    /**
+     * 初始化界面
+     */
     void init() throws Exception {
         Box uBox = Box.createHorizontalBox();
         JLabel username = new JLabel("用户名：");
